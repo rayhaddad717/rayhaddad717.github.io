@@ -1,0 +1,46 @@
+body,.weather-container{
+    background-color:#ccc;
+    text-align:center;
+display:block;}
+
+form{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+}
+
+.weather{
+    font-size:22px;
+    margin:0;
+}
+.temp{
+    font-size:60px;
+    margin:0;
+    font-weight:bold;
+}
+
+button,input{
+    margin:0 20px 40px ;
+    border-radius: 10px;
+    font-size:20px;
+    padding:0.7em;
+}
+button{
+    color:white;
+    background-color:rgb(78, 194, 178);
+}
+footer{
+    position:fixed;
+    bottom:0;
+    left:40%;
+}
+@media (max-width:600px){
+    form{
+        flex-direction:column;
+    }
+    footer{
+        left:25%;
+        margin:20px 0 5px;
+    }
+}
