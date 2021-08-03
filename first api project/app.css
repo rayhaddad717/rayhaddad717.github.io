@@ -1,26 +1,45 @@
+
 body,.weather-container{
     background-color:#ccc;
     text-align:center;
-display:block;}
+    display:block;
 
+}
+.weather-container{
+    margin-bottom: 0px;
+}
 form{
+        width:50%;
+        margin:auto;
+    }
+.Container, .radioContainer{
     display:flex;
     flex-direction:row;
     justify-content: center;
     align-items:center;
 }
+label:hover{
+    cursor:pointer;
+}
+.radioContainer{
+    border: 1px solid blue;
+    flex-direction: column;
+    width:50%;
+    align-items: flex-start;
+    padding:0 40px;
+}
 
-.weather{
+.weatherDescription{
     font-size:22px;
-    margin:0;
+
 }
 .temp{
     font-size:60px;
-    margin:0;
+    margin:0 0 40px;
     font-weight:bold;
 }
 
-button,input{
+button, #city{
     margin:0 20px 40px ;
     border-radius: 10px;
     font-size:20px;
@@ -30,10 +49,25 @@ button,input{
 button{
     color:white;
     background-color:rgb(78, 194, 178);
-}
-button:hover,input:hover{
+flex-shrink: 0.5;}
+button:hover, #city:hover{
     cursor:pointer;
     transform: translateY(-5px);
+}
+input, label{
+    display:inline;
+
+}
+input:hover{
+    cursor:pointer;
+    transform: translateY(-2px);
+}
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 footer{
     position:fixed;
@@ -41,11 +75,26 @@ footer{
     left:40%;
 }
 @media (max-width:600px){
-    form{
+    .Container,.radioContainer{
         flex-direction:column;
     }
     footer{
         left:25%;
         margin:20px 0 5px;
     }
+}
+
+.additionalWeatherInfo{
+    text-align:center;
+    border: 1px solid black;
+    margin:auto;
+    display:block;
+    display:flex;
+    justify-content: center;
+    padding:1.5em;
+    /* display:none; */
+}
+
+.ok{
+    border:1px solid black;
 }

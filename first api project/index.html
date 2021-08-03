@@ -15,17 +15,63 @@
 <body>
     <form onsubmit="return setAction(this)">
         <!-- <label for="city">Please enter a city name</label> -->
-        <input type="text" name="city" id="city" required placeholder="City">
-        <button type="submit"> Check Weather</button>
+        <div class="Container">
+            <input type="text" name="city" id="city" required placeholder="City">
+            <button type="submit"> Check Weather</button>
+        </div>
+        <div class="radioContainer">
+            <div class="radio2">
+                <label for="min">Minimum Content</label>
+                <input checked required type="radio" name="infoContent" id="min">
+
+            </div>
+            <div class="radio1">
+
+                <label id="labelFull" for="full">Full Content</label>
+                <input required type="radio" name="infoContent" id="full">
+            </div>
+
+        </div>
     </form>
     <div class="weather-container">
         <img class="icon">
-        <p class="weather"></p>
+        <p class="weatherDescription"></p>
         <p class="temp"></p>
     </div>
+    <div>
+        <a class="country"> </a>
+        <img class="flag">
+    </div>
+    <table class="additionalWeatherInfo" id="fullInfo" style="display: block;">
+        <th>Weather Data</th>
+        <tr>
+            <td>Humidity</td>
+            <td class="humidity"></td>
+        </tr>
+        <tr>
+            <td>Feels Like</td>
+            <td class="feelsLike"></td>
+        </tr>
+
+        <tr>
+            <td>Pressure</td>
+            <td class="pressure"></td>
+        </tr>
+
+        <tr>
+            <td>Max Temp</td>
+            <td class="maxTemp"></td>
+        </tr>
+
+        <tr>
+            <td>Min Temp</td>
+            <td class="minTemp"></td>
+        </tr>
+
+    </table>
 </body>
 <footer>
-    <p>All data from <a href="openweathermap.org">OpenWeatherMap</a> </p>
+    <p>All data from <a href="https://openweathermap.org">OpenWeatherMap</a> </p>
 </footer>
 
 </html>
