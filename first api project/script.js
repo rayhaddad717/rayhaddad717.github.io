@@ -38,7 +38,7 @@ function setAction(form) {
 
         var fullInfo = document.getElementById("fullInfo");
         if (full.checked) {
-            fullInfo.style.display = "inline";
+            fullInfo.style.display = "flex";
 
         }
         else {

@@ -24,9 +24,11 @@ label:hover{
 .radioContainer{
     border: 1px solid blue;
     flex-direction: column;
-    width:50%;
+    width:70%;
     align-items: flex-start;
-    padding:0 40px;
+    padding:10px 0.5em;
+    border-radius:15px;
+    font-size:1.5em;
 }
 
 .weatherDescription{
@@ -93,8 +95,4 @@ footer{
     justify-content: center;
     padding:1.5em;
     /* display:none; */
-}
-
-.ok{
-    border:1px solid black;
 }
