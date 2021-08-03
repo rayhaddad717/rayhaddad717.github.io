@@ -88,11 +88,17 @@ footer{
 
 .additionalWeatherInfo{
     text-align:center;
-    border: 1px solid black;
+    border: 5px solid blue;
+    border-radius:10px;
+
     margin:auto;
     display:block;
     display:flex;
     justify-content: center;
     padding:1.5em;
     display:none;
+}
+td,th{
+    border:1px solid black;
+    padding:10px;
 }
