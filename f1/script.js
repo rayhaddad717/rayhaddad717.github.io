@@ -1,4 +1,5 @@
 function setAction(form) {
+
     var year = document.getElementById("yearInput").value;
 
     $.getJSON("https://ergast.com/api/f1/" + year + "/driverStandings.json", function (data) {
