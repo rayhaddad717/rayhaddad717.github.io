@@ -1,0 +1,20 @@
+#f1img{
+    background-color: rgba(255,255,255,0.7);
+    padding:0.7em;
+    margin-right:0.5em;
+}
+form{
+    margin-left:auto;
+}
+
+@media (max-width:720px){
+    form{
+        margin-top:20px;
+    }
+    .navbar-nav{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -6,17 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WorldWide Weather</title>
-    <link rel="stylesheet" href="app.css">
     <!-- To include jquery which is a lighweight js library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bootstrap.js"></script>
     <script src="script.js"></script>
 </head>
 
 <body>
-    <form onsubmit="return setAction(this)">
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger">
+        <div class="container-fluid ">
+            <img src="F1.svg.png" id="f1img" alt="">
+            <a class="navbar-brand   " href="">F1 History</a>
+            <button class="navbar-toggler   " type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarContent">
+                <ul class="navbar-nav ">
+
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="home/home.html">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="about/about.html">About</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">Why F1</a>
+                    </li>
+                </ul>
+                <form onsubmit="return setAction(this)" class="d-flex">
+                    <input class="form-control me-2" type="search" id="yearInput" type="number" name="year"
+                        placeholder="enter Year" required aria-label="Search">
+                    <button class="btn btn-outline-success text-light " type="submit">Search</button>
+                </form>
+            </div>
+
+        </div>
+    </nav>
+    <p id="p1">hello</p>
+
+    <!-- <form onsubmit="return setAction(this)">
         <input id="yearInput" type="number" name="year" placeholder="enter Year" required>
         <button type="submit">Submit</button>
-    </form>
+    </form> -->
     <p class="driverName0"></p>
     <p class="driverName1"></p>
     <p class="driverName2"></p>

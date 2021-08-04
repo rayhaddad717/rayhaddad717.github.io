@@ -38,3 +38,9 @@ function setAction(form) {
     });
     return false;
 }
+
+function fun(a) {
+    var paragraph = document.getElementById("p1");
+    p1.style.color = "blue";
+    return false;
+}
