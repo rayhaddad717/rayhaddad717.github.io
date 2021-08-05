@@ -1,5 +1,6 @@
 function setAction(form) {
 
+    hideIntroWelcome();
     var searchByYear = document.getElementById("byYear");
     var searchByGP = document.getElementById("byGP");
     var searchByDriver = document.getElementById("byDriver");
@@ -163,4 +164,26 @@ function removeByDriverTable() {
     driverTable.style.display = "none";
     driverResultsTable.style.display = "none";
     return;
+}
+
+function hideIntroWelcome() {
+    var introWelcome = document.getElementById("introWelcome");
+    introWelcome.style.display = "none";
+}
+function changeSearchType() {
+    var radioByYear = document.getElementById("byYear");
+    var radioByGP = document.getElementById("byGP");
+    var radioByDriver = document.getElementById("byDriver");
+    var searchInput = document.getElementById("input");
+    var searchButton = document.getElementById("searchButton");
+    if (radioByYear.checked) {
+        searchInput.setAttribute("placeholder", "ex: 2021");
+    }
+    else if (radioByGP.checked) {
+        searchInput.setAttribute("placeholder", "Soon");
+        searchButton.setAttribute("disabled", "");
+    }
+    else if (radioByDriver.checked) {
+        searchInput.setAttribute("placeholder", "ex: vettel,2021");
+    }
 }

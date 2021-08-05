@@ -15,6 +15,8 @@
 </head>
 
 <body>
+
+
     <nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top">
         <div class="container-fluid ">
             <img src="F1.svg.png" id="f1img" alt="">
@@ -38,7 +40,7 @@
                 </ul>
                 <form onsubmit="return setAction(this)" class="d-flex">
                     <input class="form-control me-2 inputData" type="search" id="input" type="number" name="year"
-                        placeholder="enter Year" required aria-label="Search">
+                        placeholder="Choose a search type" required aria-label="Search">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle ms-1 me-2" type="button"
                             id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,31 +48,36 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li>
-                                <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
-                                        id="byYear">
+                                <div class="form-check"> <input class="form-check-input" onclick="changeSearchType();"
+                                        type="radio" name="searchType" id="byYear" checked>
                                     <label class="form-check-label" for="byYear">By F1 Season</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
-                                        id="byGP">
+                                <div class="form-check"> <input class="form-check-input" onclick="changeSearchType();"
+                                        type="radio" name="searchType" id="byGP">
                                     <label class="form-check-label" for="byGP">By GrandPrix</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
-                                        id="byDriver" checked>
+                                <div class="form-check"> <input class="form-check-input" onclick="changeSearchType();"
+                                        type="radio" name="searchType" id="byDriver">
                                     <label class="form-check-label" for="byDriver">By Driver,Year</label>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <button class="btn btn-outline-success text-light onclick=" type="submit">Search</button>
+                    <button class="btn btn-outline-success text-light " id="searchButton" type="submit">Search</button>
                 </form>
             </div>
 
         </div>
     </nav>
+    <section class="container-fluid introWelcome" id="introWelcome">
+        <h1>
+            Welcome to F1. Please enter your search query!
+        </h1>
+    </section>
 
     <!-- <form onsubmit="return setAction(this)">
         <input id="yearInput" type="number" name="year" placeholder="enter Year" required>

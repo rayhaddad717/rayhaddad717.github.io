@@ -13,6 +13,9 @@ form{
     padding:0.5em;
     display:none;
 }
+.introWelcome{
+    margin-top:7em;
+}
 .dropdown-menu{
     padding:10px;
 }
