@@ -51,24 +51,26 @@ function checkWin() {
     let firstPathStart = document.getElementById("11");
     let secondPathStart = document.getElementById("33");
     let firstPathChoice = firstPathStart.innerText;
+    let secondPathChoice = secondPathStart.innerText;
     let thirdPathStart = document.getElementById("21");
     let thirdPathChoice = thirdPathStart.innerText;
-    let secondPathChoice = secondPathStart.innerText;
+    let fourthPathStart = document.getElementById("12");
+    let fourthPathChoice = fourthPathStart.innerText;
     let won = false;
     if (gameBox[0][0] !== null) {
 
         if (document.getElementById("21").innerText === firstPathChoice && document.getElementById("31").innerText === firstPathChoice) {
-            alert(firstPathChoice + "Won!");
+            alert(firstPathChoice + " Won!");
             won = true;
         }
-        else if (document.getElementById("12").innerText === firstPathChoice && document.getElementById("31").innerText === firstPathChoice) {
-            alert(firstPathChoice + "Won!");
+        else if (document.getElementById("12").innerText === firstPathChoice && document.getElementById("13").innerText === firstPathChoice) {
+            alert(firstPathChoice + " Won!");
             won = true;
 
 
         }
         else if (document.getElementById("22").innerText === firstPathChoice && document.getElementById("33").innerText === firstPathChoice) {
-            alert(firstPathChoice + "Won!");
+            alert(firstPathChoice + " Won!");
             won = true;
 
 
@@ -78,13 +80,13 @@ function checkWin() {
     if (gameBox[2][2] !== null) {
 
         if (document.getElementById("32").innerText === secondPathChoice && document.getElementById("31").innerText === secondPathChoice) {
-            alert(secondPathChoice + "Won!");
+            alert(secondPathChoice + " Won!");
             won = true;
 
 
         }
-        else if (document.getElementById("23").innerText === secondPathChoice && document.getElementById("21").innerText === secondPathChoice) {
-            alert(secondPathChoice + "Won!");
+        else if (document.getElementById("23").innerText === secondPathChoice && document.getElementById("23").innerText === secondPathChoice) {
+            alert(secondPathChoice + " Won!");
             won = true;
 
 
@@ -93,20 +95,23 @@ function checkWin() {
     if (gameBox[1][0] !== null) {
 
         if (document.getElementById("22").innerText === thirdPathChoice && document.getElementById("23").innerText === thirdPathChoice) {
-            alert(thirdPathChoice + "Won!");
+            alert(thirdPathChoice + " Won!");
             won = true;
 
 
+        }
+    }
+    if (gameBox[0][1] !== null) {
+
+        if (document.getElementById("22").innerText === fourthPathChoice && document.getElementById("32").innerText === fourthPathChoice) {
+            alert(fourthPathChoice + " Won!");
+            won = true;
         }
     }
 
     if (!won) {
         return;
     }
-    console.log(gameBox);
-    console.log(firstPathChoice);
-    console.log(secondPathChoice);
-    console.log(thirdPathChoice);
 
 }
 
