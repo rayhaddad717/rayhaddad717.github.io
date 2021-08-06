@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First JS</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tik Tack Toe</h1>
+        <h2 id="turn">X's Turn</h2>
+        <button class="restart" onclick="newGame()">New game</button>
+        <div class="wholeBox">
+            <div class="row">
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="11"></div>
+                </div>
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="12"></div>
+                </div>
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="13"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="21"></div>
+                </div>
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="22"></div>
+                </div>
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="23"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="31"></div>
+                </div>
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="32"></div>
+                </div>
+                <div class="cell">
+                    <div class="answer" onclick="cellClicked(this)" id="33"></div>
+                </div </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

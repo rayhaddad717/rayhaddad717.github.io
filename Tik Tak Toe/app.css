@@ -1,0 +1,80 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:100%;
+}
+.answer{
+    /* border:1px solid green; */
+    width:80%;
+    height:80%;
+    font-size:3em;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.399);
+    
+}
+h1{
+    color:red;
+}
+.container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:100%;
+
+}
+.cell{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.answer:hover{
+    cursor:pointer;
+}
+.wholeBox, .row, .cell{
+    /* border:1px solid black; */
+    width:200px;
+    height:200px;
+    box-sizing:border-box;
+    margin:0px;
+
+}
+.wholeBox{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin:4em 0;
+}
+.row{
+    width:100%;
+    height:calc(100%/3);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+}
+.row:nth-of-type(2){
+    border:3px solid rgba(0,0,0,0.5);
+    border-left:0;
+    border-right:0;
+    border-radius: 5px;;
+
+}
+.cell:nth-of-type(2){
+    border:3px solid rgba(0,0,0,0.5);
+    border-top:0;
+    border-bottom:0;
+
+
+}
+.cell{
+    border-color:red;
+    
+    width:calc(100%/3);
+    height:100%;
+}
