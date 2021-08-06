@@ -56,6 +56,8 @@ function checkWin() {
     let thirdPathChoice = thirdPathStart.innerText;
     let fourthPathStart = document.getElementById("12");
     let fourthPathChoice = fourthPathStart.innerText;
+    let fifthPathStart = document.getElementById("13");
+    let fifthPathChoice = fifthPathStart.innerText;
     let won = false;
     if (gameBox[0][0] !== null) {
 
@@ -105,6 +107,13 @@ function checkWin() {
 
         if (document.getElementById("22").innerText === fourthPathChoice && document.getElementById("32").innerText === fourthPathChoice) {
             alert(fourthPathChoice + " Won!");
+            won = true;
+        }
+    }
+    if (gameBox[0][2] !== null) {
+
+        if (document.getElementById("22").innerText === fifthPathChoice && document.getElementById("31").innerText === fifthPathChoice) {
+            alert(fifthPathChoice + " Won!");
             won = true;
         }
     }
