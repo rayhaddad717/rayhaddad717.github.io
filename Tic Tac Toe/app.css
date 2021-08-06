@@ -1,10 +1,11 @@
-.body{
+body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height:100vh;
     width:100%;
+    background-color:rgba(75, 72, 72, 0.952);
 }
 .answer{
     /* border:1px solid green; */
@@ -12,11 +13,13 @@
     height:80%;
     font-size:3em;
     text-align: center;
-    color:rgba(0, 0, 0, 0.399);
+    /* color:rgba(0, 0, 0, 0.399); */
+    color:white;
     
 }
 h1{
-    color:red;
+    color:rgb(4, 155, 243);
+    font-size:3.5em;
 }
 .container{
     width:100%;
