@@ -87,7 +87,7 @@ function checkWin() {
 
 
         }
-        else if (document.getElementById("23").innerText === secondPathChoice && document.getElementById("23").innerText === secondPathChoice) {
+        else if (document.getElementById("13").innerText === secondPathChoice && document.getElementById("23").innerText === secondPathChoice) {
             alert(secondPathChoice + " Won!");
             won = true;
 
