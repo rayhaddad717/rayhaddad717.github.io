@@ -1,30 +1,31 @@
+
 function setAction(form) {
 
     hideIntroWelcome();
-    var searchByYear = document.getElementById("byYear");
-    var searchByGP = document.getElementById("byGP");
-    var searchByDriver = document.getElementById("byDriver");
+    const searchByYear = document.getElementById("byYear");
+    const searchByGP = document.getElementById("byGP");
+    const searchByDriver = document.getElementById("byDriver");
 
     if (searchByDriver.checked) {
         getDriverInfo();
         return false;
     }
     removeByDriverTable();
-    var year = document.getElementById("input").value;
+    const year = document.getElementById("input").value;
 
-    $.getJSON("https://ergast.com/api/f1/" + year + "/driverStandings.json", function (data) {
+    $.getJSON("https://ergast.com/api/f1/" + year + "/driverStandings.json", (data) => {
         console.log(data);
-        var arrayLength = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.length;
+        let arrayLength = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.length;
         console.log(arrayLength);
-        var driversFN = [];
-        var driversLN = [];
-        var driversInitials = [];
-        var driversDOB = [];
-        var wins = [];
-        var driverNum = [];
-        var driverNationality = [];
-        var driverPoints = [];
-        var driverPosition = [];
+        let driversFN = [];
+        let driversLN = [];
+        let driversInitials = [];
+        let driversDOB = [];
+        let wins = [];
+        let driverNum = [];
+        let driverNationality = [];
+        let driverPoints = [];
+        let driverPosition = [];
         for (let i = 0; i < arrayLength; i++) {
             driversFN[i] = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.givenName;
 
@@ -43,7 +44,7 @@ function setAction(form) {
             driverPosition[i] = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].position;
 
             wins[i] = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].wins;
-            var className = ".driverName" + i;
+            let className = ".driverName" + i;
             // $(className).text(driverPosition[i] + " " + driversFN[i] + driversLN[i] + " wins= " + wins[i] + " " + driverNationality[i] + " " + driversInitials[i] + " " + driversDOB[i] + " " + driverNum[i] + " " + driverPoints[i]);
 
             $(className + " .driverPosition").text(driverPosition[i]);
@@ -55,7 +56,7 @@ function setAction(form) {
             $(className + " .driverNationality").text(driverNationality[i]);
             $(className + " .driverPoints").text(driverPoints[i]);
             $(className + " .driverWins").text(wins[i]);
-            var driverTable = document.getElementById("driverTable");
+            let driverTable = document.getElementById("driverTable");
             driverTable.style.display = "table";
         }
     });
@@ -64,35 +65,35 @@ function setAction(form) {
 
 function getDriverInfo() {
     removeByYearTable();
-    var input = document.getElementById("input").value;
-    var inputArray = input.split(",");
+    let input = document.getElementById("input").value;
+    let inputArray = input.split(",");
     console.log(inputArray[0] + "000000000000000000000000000000" + inputArray[1]);
-    var driverInput = inputArray[0];
-    var yearInput = inputArray[1];
+    let driverInput = inputArray[0];
+    let yearInput = inputArray[1];
     console.log("entered fun");
     $.getJSON("https://ergast.com/api/f1/" + yearInput + "/drivers/" + driverInput + "/results" + ".json", function (data) {
         console.log(data);
         displayByDriverTable();
-        var totalRaces = data.MRData.RaceTable.Races.length;
+        let totalRaces = data.MRData.RaceTable.Races.length;
 
         console.log(totalRaces);
         for (let i = 0; i < totalRaces; i++) {
-            var raceName = data.MRData.RaceTable.Races[i].raceName;
-            var round = data.MRData.RaceTable.Races[i].round;
-            var driverPosition = data.MRData.RaceTable.Races[i].Results[0].position;
-            var driverGrid = data.MRData.RaceTable.Races[i].Results[0].grid;
-            var driverPoints = data.MRData.RaceTable.Races[i].Results[0].points;
-            var driverStatus = data.MRData.RaceTable.Races[i].Results[0].status;
-            var driverLaps = data.MRData.RaceTable.Races[i].Results[0].laps;
-            var constructor = data.MRData.RaceTable.Races[i].Results[0].Constructor.name;
+            let raceName = data.MRData.RaceTable.Races[i].raceName;
+            let round = data.MRData.RaceTable.Races[i].round;
+            let driverPosition = data.MRData.RaceTable.Races[i].Results[0].position;
+            let driverGrid = data.MRData.RaceTable.Races[i].Results[0].grid;
+            let driverPoints = data.MRData.RaceTable.Races[i].Results[0].points;
+            let driverStatus = data.MRData.RaceTable.Races[i].Results[0].status;
+            let driverLaps = data.MRData.RaceTable.Races[i].Results[0].laps;
+            let constructor = data.MRData.RaceTable.Races[i].Results[0].Constructor.name;
             if (driverPosition == 1 || driverStatus != "Finished") {
-                var time = " ";
+                let time = " ";
             }
             else {
-                var time = data.MRData.RaceTable.Races[i].Results[0].Time.time;
+                let time = data.MRData.RaceTable.Races[i].Results[0].Time.time;
             }
 
-            var className = ".race" + i;
+            let className = ".race" + i;
             $(className + " .raceName").text(raceName);
             $(className + " .Position").text(driverPosition);
             $(className + " .Round").text(round);
@@ -109,14 +110,14 @@ function getDriverInfo() {
 
     $.getJSON("https://ergast.com/api/f1/drivers/" + driverInput + ".json", function (data) {
         console.log(data);
-        var driverNumber = data.MRData.DriverTable.Drivers[0].permanentNumber;
-        var driverDOB = data.MRData.DriverTable.Drivers[0].dateOfBirth;
+        let driverNumber = data.MRData.DriverTable.Drivers[0].permanentNumber;
+        let driverDOB = data.MRData.DriverTable.Drivers[0].dateOfBirth;
 
-        var driverFN = data.MRData.DriverTable.Drivers[0].givenName;
+        let driverFN = data.MRData.DriverTable.Drivers[0].givenName;
 
-        var driverLN = data.MRData.DriverTable.Drivers[0].familyName;
-        var driverCode = data.MRData.DriverTable.Drivers[0].code;
-        var driverNationality = data.MRData.DriverTable.Drivers[0].nationality;
+        let driverLN = data.MRData.DriverTable.Drivers[0].familyName;
+        let driverCode = data.MRData.DriverTable.Drivers[0].code;
+        let driverNationality = data.MRData.DriverTable.Drivers[0].nationality;
 
         $(".driverName0 .driverNumber").text(driverNumber);
         $(".driverName0 .driverDOB").text(driverDOB);
@@ -134,23 +135,23 @@ function getDriverInfo() {
 
 function displayByYearTable() {
 
-    var driverTable = document.getElementById("driverTable");
+    let driverTable = document.getElementById("driverTable");
     driverTable.style.display = "table";
     return;
 }
 
 function removeByYearTable() {
 
-    var driverTable = document.getElementById("driverTable");
+    let driverTable = document.getElementById("driverTable");
     driverTable.style.display = "none";
     return;
 }
 
 function displayByDriverTable() {
 
-    var driverTable = document.getElementById("driverTableDriver");
+    let driverTable = document.getElementById("driverTableDriver");
 
-    var driverResultsTable = document.getElementById("driverTableDriverResults");
+    let driverResultsTable = document.getElementById("driverTableDriverResults");
     driverTable.style.display = "table";
     driverResultsTable.style.display = "table";
     return;
@@ -158,24 +159,24 @@ function displayByDriverTable() {
 
 function removeByDriverTable() {
 
-    var driverTable = document.getElementById("driverTableDriver");
+    let driverTable = document.getElementById("driverTableDriver");
 
-    var driverResultsTable = document.getElementById("driverTableDriverResults");
+    let driverResultsTable = document.getElementById("driverTableDriverResults");
     driverTable.style.display = "none";
     driverResultsTable.style.display = "none";
     return;
 }
 
 function hideIntroWelcome() {
-    var introWelcome = document.getElementById("introWelcome");
+    const introWelcome = document.getElementById("introWelcome");
     introWelcome.style.display = "none";
 }
 function changeSearchType() {
-    var radioByYear = document.getElementById("byYear");
-    var radioByGP = document.getElementById("byGP");
-    var radioByDriver = document.getElementById("byDriver");
-    var searchInput = document.getElementById("input");
-    var searchButton = document.getElementById("searchButton");
+    let radioByYear = document.getElementById("byYear");
+    let radioByGP = document.getElementById("byGP");
+    let radioByDriver = document.getElementById("byDriver");
+    let searchInput = document.getElementById("input");
+    let searchButton = document.getElementById("searchButton");
     if (radioByYear.checked) {
         searchInput.setAttribute("placeholder", "ex: 2021");
     }
