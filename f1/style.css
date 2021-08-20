@@ -1,0 +1,54 @@
+#f1img{
+    background-color: rgba(255,255,255,0.7);
+    padding:0.7em;
+    margin-right:0.5em;
+}
+form{
+    margin-left:auto;
+}
+.driverTable, .driverTableDriver, .driverTableDriverResults{
+    border:2px solid blue;
+    width:100%;
+    margin-top:4em;
+    padding:0.5em;
+}
+.raceTable{
+    border:2px solid blue;
+    width:100%;
+    margin-top:4em;
+    padding:0.5em;
+}
+.introWelcome{
+    margin-top:7em;
+}
+.dropdown-menu{
+    padding:10px;
+}
+.raceName{
+    text-align: center;
+    font-weight:bolder;
+    background-color: darkgray;
+    padding:0;
+    margin:0;
+}
+thead{
+    background-color:rgba(255,0,0,0.9);
+    color:white;
+}
+tbody{
+    background-color: rgba(255,255,255,0.19);
+}
+@media (max-width:720px){
+    form{
+        margin-top:20px;
+    }
+    .navbar-nav{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .willHide{
+        display:none;
+    }
+}
