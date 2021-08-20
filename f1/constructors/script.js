@@ -6,7 +6,7 @@ const makeCarouselSlide = constructor => {
 
     const image = document.createElement('img');
     image.classList.add('d-block');
-    image.classList.add('w-50');
+    image.classList.add('w-100');
     image.src = imagePath;
 
     const captionDiv = document.createElement('div');
@@ -18,9 +18,11 @@ const makeCarouselSlide = constructor => {
 
     const constructorNameHeader = document.createElement('h5');
     constructorNameHeader.innerText = constructorName;
+    constructorNameHeader.style.color = "black";
 
     const nationalityCaption = document.createElement('p');
     nationalityCaption.innerText = nationality;
+    nationalityCaption.style.color = "black";
 
     captionDiv.appendChild(constructorNameHeader);
     captionDiv.appendChild(nationalityCaption);
@@ -64,14 +66,14 @@ const includePrevNextButton = () => {
 
     next.appendChild(nextIcon);
     next.appendChild(nextText);
-    document.querySelector('#Carousel').appendChild(next);
-    document.querySelector('#Carousel').appendChild(prev);
+    document.querySelector('#carouselExampleControls').appendChild(prev);
+    document.querySelector('#carouselExampleControls').appendChild(next);
 }
 const makeCarousel = (constructors) => {
     const carousel = document.createElement('div');
     carousel.classList.add('carousel');
     carousel.classList.add('slide');
-    carousel.id = 'Carousel';
+    carousel.id = 'carouselExampleControls';
 
     const carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner');
@@ -81,7 +83,8 @@ const makeCarousel = (constructors) => {
     }
     carousel.appendChild(carouselInner);
     carousel.setAttribute('data-ride', 'carousel');
-    document.body.appendChild(carousel);
+    // document.body.appendChild(carousel);
+    document.querySelector('.navbar').insertAdjacentElement('afterend', carousel);
     includePrevNextButton();
 }
 const getImages = async () => {
