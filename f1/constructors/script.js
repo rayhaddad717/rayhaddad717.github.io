@@ -19,6 +19,8 @@ const makeCarouselSlide = constructor => {
     const constructorNameHeader = document.createElement('h5');
     constructorNameHeader.innerText = constructorName;
     constructorNameHeader.style.color = "black";
+    constructorNameHeader.style.backgroundColor = "white";
+    constructorNameHeader.style.display = "inline";
 
     const nationalityCaption = document.createElement('p');
     nationalityCaption.innerText = nationality;
@@ -83,7 +85,6 @@ const makeCarousel = (constructors) => {
     }
     carousel.appendChild(carouselInner);
     carousel.setAttribute('data-ride', 'carousel');
-    // document.body.appendChild(carousel);
     document.querySelector('.navbar').insertAdjacentElement('afterend', carousel);
     includePrevNextButton();
 }
